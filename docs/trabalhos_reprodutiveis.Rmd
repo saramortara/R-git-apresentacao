@@ -1,0 +1,105 @@
+---
+title: 'Trabalhos reprodutíveis com R e git: um exemplo usando o pacote coronabr'
+author: "Sara Mortara"
+date: "27 maio 2020"
+output:
+ beamer_presentation:
+    latex_engine: xelatex 
+    incremental: true
+    template:
+  
+header-includes:
+  - \usepackage{longtable,booktabs}
+  - \usepackage{graphicx}
+  - \usepackage{float}
+  - \usepackage{xcolor}
+  - \usepackage{subfig}
+  - \usepackage{fontspec}
+  - \usefonttheme{professionalfonts} 
+  - \usefonttheme{serif} 
+  - \setmainfont{Roboto Condensed}
+  - \definecolor{cor1}{HTML}{A70000}
+  - \definecolor{cor2}{HTML}{1C1C19} 
+  - \definecolor{cor3}{HTML}{ff0000}
+  - \setbeamercolor{title}{fg = cor1}
+  - \setbeamercolor{frametitle}{fg = cor1}
+  - \setbeamercolor{structure}{fg = cor2}
+  - \renewcommand\alert[1]{\textcolor{cor3}{#1}}
+  - \setbeamertemplate{navigation symbols}{
+    {  \insertslidenavigationsymbol 
+    \insertframenavigationsymbol   
+    \insertsubsectionnavigationsymbol  
+    \insertsectionnavigationsymbol
+    \insertdocnavigationsymbol  
+    \insertbackfindforwardnavigationsymbol 
+    \hspace{1em}  
+    \usebeamerfont{footline} 
+    \insertframenumber/\inserttotalframenumber }
+    \setcounter{page}{1} 
+    \pagenumbering{arabic} }
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## sobre
+
+- bióloga, usuária de R desde 2009
+- trabalho com reprodutibilidade em Ecologia, modelagem estatística e estudos de biodiversidade
+- membro do ¡liibre!
+- membro do RLadies Rio <3 
+
+## sobre hoje
+
+\Large
+\tableofcontents
+
+## 
+
+\section{1. por que reprodutibilidade?}
+
+## por que R?
+
+- muito comum na Biologia e atualmente em diversas áreas
+- acessível (em comparação a outras linguagens de programação)
+- free & open-source
+- script é essencial para reprodutibilidade, mas não a garante 
+
+## por que git?
+
+- controle de versão
+- permite acompanhar o histórico do desenvolvimento
+- facilita o trabalho colaborativo
+- facilita o compartilhamento de todas as etapas do trabalho
+
+## 
+
+\section{2. usando R de forma reprodutível}
+
+## usando projetos de RStudio
+\framesubtitle{esqueça `set.wd()`}
+
+## 
+
+\section{3. perdendo o medo de git}
+
+## git
+
+##
+
+\section{4. um exemplo com o pacote coronabr}
+
+## o pacote \href{https://liibre.github.io/coronabr/}{\textbf{coronabr}}
+
+\center
+\includegraphics[width = 9cm]{../figs/coronabr.png}
+
+## obrigada
+
+\center
+\includegraphics[scale = .1]{../figs/rainbow.png}
+
+
