@@ -18,13 +18,15 @@ header-includes:
   - \usefonttheme{professionalfonts} 
   - \usefonttheme{serif} 
   - \setmainfont{Roboto Condensed}
-  - \definecolor{cor1}{HTML}{A70000}
-  - \definecolor{cor2}{HTML}{1C1C19} 
+  - \definecolor{liibre}{HTML}{A70000}
+  - \definecolor{notblack}{HTML}{1C1C19} 
   - \definecolor{cor3}{HTML}{ff0000}
-  - \setbeamercolor{title}{fg = cor1}
-  - \setbeamercolor{frametitle}{fg = cor1}
-  - \setbeamercolor{structure}{fg = cor2}
+  - \definecolor{rladies}{HTML}{88398a}
+  - \setbeamercolor{title}{fg = liibre}
+  - \setbeamercolor{frametitle}{fg = liibre}
+  - \setbeamercolor{structure}{fg = notblack}
   - \renewcommand\alert[1]{\textcolor{cor3}{#1}}
+  - \newcommand\liibre{\textbf{\color{liibre}{¡liibre!}}}
   - \setbeamertemplate{navigation symbols}{
     {  \insertslidenavigationsymbol 
     \insertframenavigationsymbol   
@@ -49,21 +51,29 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - bióloga, usuária de R desde 2009
 - trabalho com reprodutibilidade em Ecologia, modelagem estatística e estudos de biodiversidade
-- membro do ¡liibre!
-- membro do RLadies Rio <3 
+- uma das desenvolvedoras do pacote \textbf{\href{https://model-r.github.io/modleR/}{modleR}}, liderado por \textbf{\color{liibre}{Andrea Sánchez-Tapia}}
+\begin{flushright}
+\includegraphics[scale = .25]{../figs/modleR.png}
+\end{flushright}
+\vspace{-1.25cm}
+- membro do \href{https://liibre.github.io/coronabr/about.html}{\liibre}
+- membro do \href{https://covid19br.github.io/}{\textbf{Observatório COVID-19 BR}}
+- membro do \href{https://twitter.com/RLadiesRio}{\textbf{\color{rladies}{@RLadiesRio}}}
 
 ## sobre hoje
 
 \Large
-\tableofcontents
-
+ {
+  \hypersetup{hidelinks}
+  \tableofcontents
+}
 ## 
 
 \section{1. por que reprodutibilidade?}
 
 ## por que R?
 
-- muito comum na Biologia e atualmente em diversas áreas
+- muito comum na Biologia e em diversas áreas
 - acessível (em comparação a outras linguagens de programação)
 - free & open-source
 - script é essencial para reprodutibilidade, mas não a garante 
@@ -96,6 +106,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 \center
 \includegraphics[width = 9cm]{../figs/coronabr.png}
+
+## responsabilidade com dados
+
+- dados deveriam ser abertos e acessíveis
+- nem toda análise que **pode** ser feita, **deve** ser feita 
+- cada dado diz respeito a uma pessoa
+- para COVID-19 e SRAG: **subnotificação** & **atraso**
+
+## dados brutos
+
+## dados com correção pelo atraso de notificação
 
 ## obrigada
 
