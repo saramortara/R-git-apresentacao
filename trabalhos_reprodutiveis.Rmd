@@ -19,13 +19,13 @@ header-includes:
   - \usefonttheme{serif} 
   - \setmainfont{Roboto Condensed}
   - \definecolor{liibre}{HTML}{A70000}
-  - \definecolor{notblack}{HTML}{1C1C19} 
-  - \definecolor{cor3}{HTML}{ff0000}
+  - \definecolor{notblack}{HTML}{181818} 
+  - \definecolor{roxo}{HTML}{562457}
   - \definecolor{rladies}{HTML}{88398a}
-  - \setbeamercolor{title}{fg = liibre}
-  - \setbeamercolor{frametitle}{fg = liibre}
+  - \setbeamercolor{title}{fg = roxo}
+  - \setbeamercolor{frametitle}{fg = roxo}
   - \setbeamercolor{structure}{fg = notblack}
-  - \renewcommand\alert[1]{\textcolor{cor3}{#1}}
+  - \renewcommand\alert[1]{\textcolor{rladies}{#1}}
   - \newcommand\liibre{\textbf{\color{liibre}{¡liibre!}}}
   - \setbeamertemplate{navigation symbols}{
     {  \insertslidenavigationsymbol 
@@ -56,9 +56,9 @@ knitr::opts_chunk$set(echo = FALSE)
 \includegraphics[scale = .25]{../figs/modleR.png}
 \end{flushright}
 \vspace{-1.25cm}
-- membro do \href{https://liibre.github.io/coronabr/about.html}{\liibre}
-- membro do \href{https://covid19br.github.io/}{\textbf{Observatório COVID-19 BR}}
-- membro do \href{https://twitter.com/RLadiesRio}{\textbf{\color{rladies}{@RLadiesRio}}}
+- \href{https://liibre.github.io/coronabr/about.html}{\liibre} - pacote \textbf{coronabr}
+- \href{https://covid19br.github.io/}{\textbf{Observatório COVID-19 BR}}
+- \href{https://twitter.com/RLadiesRio}{\textbf{\color{rladies}{@RLadiesRio}}}
 
 ## sobre hoje
 
@@ -70,6 +70,23 @@ knitr::opts_chunk$set(echo = FALSE)
 ## 
 
 \section{1. por que reprodutibilidade?}
+
+## 
+
+\includegraphics[scale = .5]{../figs/phd031214s.png}
+
+## motivos para reprodutibilidade
+
+\Large
+
+por você no futuro
+
+por colegas
+
+evidências de que seus resultados estão corretos
+
+permitir que outres usem seus métodos e resultados
+ 
 
 ## por que R?
 

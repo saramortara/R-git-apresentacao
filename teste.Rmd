@@ -1,0 +1,106 @@
+---
+title: "Trabalhos reprodutíveis com R e git: um exemplo usando o pacote coronabr"
+author: "Sara"
+date: "27 maio 2020"
+output:
+  xaringan::moon_reader:
+    css: ["default", "rladies", "rladies-fonts"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+duo_accent(
+  # primary_color = "#A70000",
+  # secondary_color = "#ff0000",
+  # white_color = "white", 
+  header_font_google = google_font("Roboto Condensed"),
+  text_font_google   = google_font("Roboto Condensed", "300", "300i"),
+  code_font_google   = google_font("Ubuntu Mono"), text_font_size = "30px"
+)
+```
+
+
+## sobre
+
+- bióloga, usuária de R desde 2009
+- trabalho com reprodutibilidade em Ecologia, modelagem estatística e estudos de biodiversidade
+- uma das desenvolvedoras do pacote \textbf{\href{https://model-r.github.io/modleR/}{modleR}}, liderado por \textbf{\color{liibre}{Andrea Sánchez-Tapia}}
+\begin{flushright}
+\includegraphics[scale = .25]{../figs/modleR.png}
+\end{flushright}
+\vspace{-1.25cm}
+- membro do \href{https://liibre.github.io/coronabr/about.html}{\liibre}
+- membro do \href{https://covid19br.github.io/}{\textbf{Observatório COVID-19 BR}}
+- membro do \href{https://twitter.com/RLadiesRio}{\textbf{\color{rladies}{@RLadiesRio}}}
+
+---
+
+## sobre hoje
+
+\Large
+ {
+  \hypersetup{hidelinks}
+  \tableofcontents
+}
+## 
+
+\section{1. por que reprodutibilidade?}
+
+## por que R?
+
+- muito comum na Biologia e em diversas áreas
+- acessível (em comparação a outras linguagens de programação)
+- free & open-source
+- script é essencial para reprodutibilidade, mas não a garante 
+
+## por que git?
+
+- controle de versão
+- permite acompanhar o histórico do desenvolvimento
+- facilita o trabalho colaborativo
+- facilita o compartilhamento de todas as etapas do trabalho
+
+## 
+
+\section{2. usando R de forma reprodutível}
+
+## usando projetos de RStudio
+\framesubtitle{esqueça `set.wd()`}
+
+## 
+
+\section{3. perdendo o medo de git}
+
+## git
+
+##
+
+\section{4. um exemplo com o pacote coronabr}
+
+## o pacote \href{https://liibre.github.io/coronabr/}{\textbf{coronabr}}
+
+\center
+\includegraphics[width = 9cm]{../figs/coronabr.png}
+
+## responsabilidade com dados
+
+- dados deveriam ser abertos e acessíveis
+- nem toda análise que **pode** ser feita, **deve** ser feita 
+- cada dado diz respeito a uma pessoa
+- para COVID-19 e SRAG: **subnotificação** & **atraso**
+
+## dados brutos
+
+## dados com correção pelo atraso de notificação
+
+## obrigada
+
+\center
+\includegraphics[scale = .1]{../figs/rainbow.png}
+
