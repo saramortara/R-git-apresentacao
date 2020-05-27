@@ -566,7 +566,7 @@ class(df$date)
 ```
 
 ---
-## criando um gráfico com[ggplot2](https://ggplot2.tidyverse.org)
+## criando um gráfico com [ggplot2](https://ggplot2.tidyverse.org)
 
 ```{r}
 p <- ggplot(df, aes(x = date, y = confirmed_per_100k_inhabitants)) +
@@ -656,7 +656,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/liibre/R-git/master/f
 ---
 ## um relatório simples com Rmarkdown
 
-- [Rmarkdwn](https://rmarkdown.rstudio.com) :)
+- [Rmarkdown](https://rmarkdown.rstudio.com) :)
 --
 
 
@@ -716,16 +716,19 @@ knitr::include_graphics("figs/reproducibility.jpg")
 ---
 ## para saber mais
 
-- [material curso liibre]() 
---
+- [material curso liibre](https://gitlab.com/liibre/curso/-/wikis/material) 
 
-- [Jenny Bryan e fluxos de trabalho]()
---
 
-- [Daniele Navarro]()
---
+- [Jenny Bryan - workflows](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
 
-- []()
+
+- [Jenny Bryan - happy git with R](https://happygitwithr.com/)
+
+
+- [Daniele Navarro - robust tools](https://robust-tools.djnavarro.net)
+
+
+- [Page Piccinini - R & git setup](https://pagepiccinini.com/r-course/lesson-0-introduction-and-set-up/)
 
 ---
 
