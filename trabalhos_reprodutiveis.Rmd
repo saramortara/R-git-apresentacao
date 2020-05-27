@@ -40,7 +40,7 @@ layout: true
 
 ---
 background-image: url(figs/modleR.png)
-background-position: 80% 55%
+background-position: 80% 65%
 
 ## sobre
 
@@ -51,11 +51,6 @@ background-position: 80% 55%
 - uma das desenvolvedoras do pacote [__.red[modler]__](https://model-r.github.io/modleR/]modleR), liderado por __Andrea Sánchez-Tapia__
 
 
-
-```{r, opt.width = .1, fig.align="right"}
-#knitr::include_graphics("figs/modleR.png")
-```
-
 - [**.red[liibre]**](https://liibre.github.io/coronabr/about.html)
 
 - [**Observatório COVID-19 BR**](https://covid19br.github.io/)
@@ -64,23 +59,22 @@ background-position: 80% 55%
 
 
 ---
-class:toc
 ## sobre hoje
 
-1. __por que reprodutibilidade?__
+__1. por que reprodutibilidade?__
 
 
-2. __usando R de forma reprodutível__
+__2. usando R de forma reprodutível__
 
 
-3. __perdendo o medo de git__
+__3. perdendo o medo de git__
 
 
-4. __um exemplo com o pacote coronabr__
+__4. um fluxo reprodutível com o pacote coronabr__
 
 ---
 class: center, middle, toc
-# __por que reprodutibilidade?__
+# __1. por que reprodutibilidade?__
 
 ---
 ## motivos para reprodutibilidade
@@ -167,7 +161,7 @@ background-position: 85% 90%
 
 ---
 class: center, middle
-# __usando R de forma reprodutível__
+# __2. usando R de forma reprodutível__
 
 ---
 ## estrutura de pastas
@@ -206,7 +200,7 @@ esqueça `set.wd()` e conheça [Jenny Bryan](https://www.tidyverse.org/blog/2017
 
 ---
 class: center, middle
-# __perdendo o medo de git__
+# __3. perdendo o medo de git__
 
 
 ---
@@ -371,6 +365,9 @@ knitr::include_graphics("figs/04_git.png")
 --
 
 
+3. instalar git no seu computador
+--
+
 3. configurar uma chave ssh no serviço remoto e no seu computador local
    
    ([aula](https://gitlab.com/liibre/curso/-/wikis/uploads/b69f3377b9607dc668c948c7a479253e/aula03_git.pdf) e [tutorial](https://rpubs.com/andreasancheztapia/574156))
@@ -385,7 +382,8 @@ knitr::include_graphics("figs/04_git.png")
 
 ---
 class: center, middle
-# __um exemplo com o pacote coronabr__
+# __4. um fluxo reprodutível com o pacote coronabr__
+https://github.com/liibre/R-git
 
 ---
 layout:false
@@ -650,7 +648,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/covid19br/covid19br.g
 ---
 ## como corrigir o atraso com [nowcasting](https://github.com/covid19br/nowcasting)
 
-```{r}
+```{r, out.width=500, fig.align="center"}
 knitr::include_graphics("https://raw.githubusercontent.com/liibre/R-git/master/figs/03-rj_nowcasting.png")
 ```
 
@@ -666,27 +664,12 @@ knitr::include_graphics("https://raw.githubusercontent.com/liibre/R-git/master/f
 --
 
 
-- sucessor de $\LaTeX$ e Markdown
+- inspirado em $\LaTeX$ e Markdown
 --
 
 
 - um tutorial [aqui](https://rpubs.com/andreasancheztapia/574403)
 --
-
-
----
-## a gente está acostumada escrever e formatar
-
-+ editores de texto __WYSIWYG - What you see is what you get__
---
-
-
-+ qualquer formatação mais "profissional" fica a cargo de desenhadores, diagramadores...
---
-
-
-+ a dificuldade é lidar com __paginação__, __tamanho/posicionamento__ de figuras, __fórmulas__ e com o __fluxo do texto__
-
 
 ---
 ## marcações de Rmarkdown
@@ -717,10 +700,32 @@ knitr::include_graphics("figs/rmarkdown_exemplo.png")
 ---
 ## um exemplo com nosso trabalho
 
-```{r}
+```{r, out.height=500, out.width=450, fig.align="center"}
 knitr::include_graphics("figs/rmarkdown_exemplo2.png")
 ```
 
+
+---
+## kit básico de ferramentas: R, git, Rmarkdown
+
+
+```{r, out.width=400, fig.align="center"}
+knitr::include_graphics("figs/reproducibility.jpg")
+```
+
+---
+## para saber mais
+
+- [material curso liibre]() 
+--
+
+- [Jenny Bryan e fluxos de trabalho]()
+--
+
+- [Daniele Navarro]()
+--
+
+- []()
 
 ---
 
