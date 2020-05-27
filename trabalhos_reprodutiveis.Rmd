@@ -189,6 +189,171 @@ class: center, middle
 # __perdendo o medo de git__
 
 
+---
+## __git__ é o sistema de controle de versão
+
++ registra mudanças ao longo do tempo
+--
+
++ volta atrás se houver algum erro
+--
+
++ entende a diferença entre uma versão e outra do mesmo arquivo
+--
+
++ facilita colaboração: __compartilhar__ as análises e __trabalhar em equipe__ 
+
+---
+## hospedagem web para repositórios git
+
+```{r out.width='20%'}
+knitr::include_graphics("figs/GitHub_Logo.png")
+knitr::include_graphics("figs/gitlab-logo-gray-rgb.png")
+knitr::include_graphics("figs/btibucket.png")
+```
+
++ ___remotes___
+--
+
++ controla detalhadamente o conteúdo de __arquivos de texto__: `.txt`, `.csv`, `.md`, `.R`, `.tex`, `.Rmd`
+--
+
++ pode incluir outro tipo de arquivos (binários)
+--
+
++ o usuário decide __quais arquivos__ incluir
+--
+
++ serve __localmente__ e __offline__
+--
+
++ se comunica com __servidores remotos__ que servem de _backup_ e para distribuir (colaboração)
+
+### trabalho > __mudanças__ >  __salvar uma versão__ > __mandar as versões para o remoto__
+
+---
+## quatro estados
+
++ _working directory_: arquivo adicionado para ser monitorado -> avisa quando for modificado
+--
+
++ _staging area_: `add` arquivos/mudanças adicionadas
+--
+
++ `commit`: cria uma versão com os arquivos adicionados
+--
+
++ `push`: manda para o remoto os commits que ainda não tiverem sido enviados
+
+__vários arquivos por _commit_, vários _commits_ por _push___
+
+---
+## fluxo básico de trabalho 
+
+sem ramificações
+
+```{r, echo=F}
+knitr::include_graphics("./figs/basic.png")
+```
+
+---
+## comandos básicos de `git`
+
+`git init` inicia um repositório   
+`git clone URL` clona um repositório já existente
+
+--
+
+`git status` checa em que pé está
+
+--
+
+`git pull origin master` atualiza o repo localmente
+
+--
+
+`git add filename` adiciona um arquivo novo ou mudanças a arquivos monitorados
+
+--
+
+`git commit -m "uma mensagem informativa"` __cria uma versão__
+
+--
+
+`git push origin master` atualiza o repositório remoto
+
+---
+## .Rproj + git = <3
+
+```{r}
+knitr::include_graphics("figs/01_git.png")
+```
+
+---
+## .Rproj + git = <3
+
+```{r}
+knitr::include_graphics("figs/02_git.png")
+```
+
+
+---
+## .Rproj + git = <3
+
+```{r}
+knitr::include_graphics("figs/03_git.png")
+```
+
+
+---
+## .Rproj + git = <3
+
+```{r}
+knitr::include_graphics("figs/04_git.png")
+```
+
+
+---
+## R + git = <3  
+
+
+`git pull origin master`
+--
+
+
+`git add codigo/02-grafico.R`
+--
+
+
+`git commit -m "alteracao na leg eixo y grafico rj"`
+--
+
+
+`git push origin master`
+--
+
+---
+## o que você precisa
+
+1. não ter medo
+--
+
+
+2. ter uma conta de github | gitlab | bitbucket
+--
+
+
+3. configurar uma chave ssh no serviço remoto e no seu computador local
+   
+   ([aula](https://gitlab.com/liibre/curso/-/wikis/uploads/b69f3377b9607dc668c948c7a479253e/aula03_git.pdf) e [tutorial](https://rpubs.com/andreasancheztapia/574156))
+--
+
+
+4. aprender errando
+--
+
+
+5. seja sincere, não tente mudar a história, permita-se errar e recomeçar
 
 ---
 class: center, middle
@@ -214,6 +379,8 @@ knitr::include_graphics("figs/coronabr.png")
 - cada dado diz respeito a uma pessoa
 - para COVID-19 e SRAG: **subnotificação** & **atraso**
 - inconsistência com dados reportados em diferentes escalas: município, estado, país (no [Rio de Janeiro](https://g1.globo.com/rj/rio-de-janeiro/noticia/2020/05/26/prefeitura-muda-metodo-e-rio-registra-menos-1177-obitos-por-covid-19.ghtml))
+
+---
 
 ---
 ## dados brutos
