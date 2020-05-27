@@ -188,7 +188,7 @@ background-size: 220px 240px
 background-position: 85% 50%
 
 ## usando projetos de RStudio
-esqueça `set.wd()` e conheça [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+esqueça `setwd()` e conheça [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
 
 ![](figs/jenny_bryan_wf.png)
 
