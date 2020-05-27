@@ -45,7 +45,9 @@ background-position: 80% 55%
 ## sobre
 
 - bióloga, usuária de R desde 2009
+
 - trabalho com reprodutibilidade em Ecologia, modelagem estatística e estudos de biodiversidade
+
 - uma das desenvolvedoras do pacote [__.red[modler]__](https://model-r.github.io/modleR/]modleR), liderado por __Andrea Sánchez-Tapia__
 
 
@@ -55,7 +57,9 @@ background-position: 80% 55%
 ```
 
 - [**.red[liibre]**](https://liibre.github.io/coronabr/about.html)
+
 - [**Observatório COVID-19 BR**](https://covid19br.github.io/)
+
 - [**.purple[@RLadiesRio]**](https://twitter.com/RLadiesRio)
 
 
@@ -65,9 +69,12 @@ class:toc
 
 1. __por que reprodutibilidade?__
 
+
 2. __usando R de forma reprodutível__
 
+
 3. __perdendo o medo de git__
+
 
 4. __um exemplo com o pacote coronabr__
 
@@ -79,14 +86,17 @@ class: center, middle, toc
 ## motivos para reprodutibilidade
 
 - por você no futuro
-
 --
+
+
 - por colegas
-
 --
+
+
 - evidências de que seus resultados estão corretos
-
 --
+
+
 - permitir que outres usem seus métodos e resultados
 
 ---
@@ -100,14 +110,18 @@ class: middle, center
 + priorizar ferramentas baseadas em _scripts_ como `R`
 --
 
+
 + usar sistemas de __controle de versões__ como `git`
 --
+
 
 + documentar bem todos os passos e decisões
 --
 
+
 + publicar os protocolos e o código
 --
+
 
 + fomentar a revisão de metodologia e do código entre pares
 
@@ -115,18 +129,21 @@ class: middle, center
 ---
 background-image: url(figs/r_data_science.jpg)
 background-size: 150px 180px
-background-position: 85% 80%
+background-position: 85% 90%
 
 ## por que R?
 
 - script é essencial para reprodutibilidade, mas não a garante 
 --
 
+
 - __código aberto__, __livre__ & __sem custo__
 --
 
+
 - acessível (em comparação a outras linguagens de programação)
 --
+
 
 - muito comum na Biologia, Ciência de Dados e em diversas áreas
 --
@@ -137,11 +154,14 @@ background-position: 85% 80%
 - __controle de versão__
 --
 
+
 - permite acompanhar o histórico do desenvolvimento
 --
 
+
 - facilita o trabalho colaborativo
 --
+
 
 - facilita o compartilhamento de todas as etapas do trabalho
 
@@ -195,18 +215,21 @@ class: center, middle
 + registra mudanças ao longo do tempo
 --
 
+
 + volta atrás se houver algum erro
 --
 
+
 + entende a diferença entre uma versão e outra do mesmo arquivo
 --
+
 
 + facilita colaboração: __compartilhar__ as análises e __trabalhar em equipe__ 
 
 ---
 ## hospedagem web para repositórios git
 
-```{r out.width='20%'}
+```{r out.width='15%'}
 knitr::include_graphics("figs/GitHub_Logo.png")
 knitr::include_graphics("figs/gitlab-logo-gray-rgb.png")
 knitr::include_graphics("figs/btibucket.png")
@@ -229,21 +252,27 @@ knitr::include_graphics("figs/btibucket.png")
 
 + se comunica com __servidores remotos__ que servem de _backup_ e para distribuir (colaboração)
 
-### trabalho > __mudanças__ >  __salvar uma versão__ > __mandar as versões para o remoto__
 
 ---
 ## quatro estados
 
+ trabalho > __mudanças__ >  __salvar uma versão__ > __mandar as versões para o remoto__
+
+
 + _working directory_: arquivo adicionado para ser monitorado -> avisa quando for modificado
 --
+
 
 + _staging area_: `add` arquivos/mudanças adicionadas
 --
 
+
 + `commit`: cria uma versão com os arquivos adicionados
 --
 
+
 + `push`: manda para o remoto os commits que ainda não tiverem sido enviados
+
 
 __vários arquivos por _commit_, vários _commits_ por _push___
 
@@ -259,7 +288,6 @@ knitr::include_graphics("./figs/basic.png")
 ---
 ## comandos básicos de `git`
 
-`git init` inicia um repositório   
 `git clone URL` clona um repositório já existente
 
 --
@@ -375,19 +403,324 @@ knitr::include_graphics("figs/coronabr.png")
 - dados deveriam ser abertos e acessíveis
   
   [Trânsparência COVID-19 OPEN KNOWLEDGE BRASIL](https://transparenciacovid19.ok.org.br)
+  
+  
 - nem toda análise que **pode** ser feita, **deve** ser feita 
+
+
 - cada dado diz respeito a uma pessoa
+
+
 - para COVID-19 e SRAG: **subnotificação** & **atraso**
+
+
 - inconsistência com dados reportados em diferentes escalas: município, estado, país (no [Rio de Janeiro](https://g1.globo.com/rj/rio-de-janeiro/noticia/2020/05/26/prefeitura-muda-metodo-e-rio-registra-menos-1177-obitos-por-covid-19.ghtml))
 
 ---
+## um repositório remoto com pastas :)
+
+```{r}
+knitr::include_graphics("figs/repo_exemplo.png")
+```
 
 ---
-## dados brutos
+## o repositório local no R Studio :)
+
+```{r}
+knitr::include_graphics("figs/repo_exemplo_no_r.png")
+```
+
+---
+## a estrutura de pastas
+
+```
+    .
+    ├── codigo/               
+    |     ├── 01-download_dados.R
+    |     ├── 02-grafico.R
+    |     └── 03-nowcasting.R
+    ├── dados/               
+    |     ├── nowcasting_acumulado_covid_2020_05_18.csv
+    |     ├── README.md
+    ├── output/    
+    |     ├── 01-rio_de_janeiro.csv
+    |     └── metadado_corona_br.csv
+    ├── figs/                 
+    |     └── 02-rj_dados_brutos.png
+    ├── docs/
+    |     └── um_relatorio_simples.Rmd
+    ├── figs/                 
+    ...
+```
+
+---
+class: center, middle
+# .purple[rodando os códigos]
 
 
 ---
-## dados com correção pelo atraso de notificação
+## 01-download_dados.R
+
+```{r}
+rj <- read.csv("../R-git_repo/output/01-rio_de_janeiro.csv")
+```
+
+
+```{r, eval = FALSE, echo = TRUE}
+###########################################################################
+# Script para download de dados de covid-19 no município do Rio de Janeiro
+# por Sara Mortara, para rladiesrio
+###########################################################################
+
+# Para instalar o pacote use:
+#remotes::install_github("liibre/coronabr")
+
+# 1. bibliotecas ####
+library(coronabr)
+
+# 2. download ####
+## dados rio de janeiro usando o geocode IBGE
+rj <- get_corona_br(filename = "01-rio_de_janeiro",
+                    ibge_cod = "3304557")
+
+```
+
+---
+## 01-download_dados.R
+
+```{r echo = TRUE}
+# 3. inspeção dos dados ####
+## checando os dados
+head(rj)
+
+## intervalo de tempo
+range(rj$date)
+
+## casos acumulados (inclui recuperados ~ 19 mil)
+max(rj$confirmed)
+
+## casos proporcional à populaççao
+max(rj$confirmed_per_100k_inhabitants)
+
+## obitos
+max(rj$deaths)
+```
+
+---
+## 01-download_dados.R
+
+```{r echo = TRUE}
+## intervalo de tempo
+range(rj$date)
+
+## casos acumulados (inclui recuperados ~ 19 mil)
+max(rj$confirmed)
+
+## casos proporcional à populaççao
+max(rj$confirmed_per_100k_inhabitants)
+
+## obitos
+max(rj$deaths)
+```
+
+---
+## [discrepância](https://g1.globo.com/rj/rio-de-janeiro/noticia/2020/05/26/prefeitura-muda-metodo-e-rio-registra-menos-1177-obitos-por-covid-19.ghtml) entre dado estadual e municipal!
+
+![](figs/o_globo.png)
+
+---
+## 02-grafico.R
+
+```{r}
+library(ggplot2)
+df <- read.csv("../R-git_repo/output/01-rio_de_janeiro.csv")
+meta <- read.csv("../R-git_repo/output/metadado_corona_br.csv")
+```
+
+
+```{r eval = FALSE, echo = TRUE}
+####################################################
+# Fazendo um gráfico simples para o município do RJ
+# por Sara Mortara, para rladiesrio
+####################################################
+
+# 1. bibliotecas ###
+library(ggplot2)
+
+# 2. lendo e padronizando os dados ####
+## data frame com os dados
+df <- read.csv("output/01-rio_de_janeiro.csv")
+
+## metadados
+meta <- read.csv("output/metadado_corona_br.csv")
+```
+
+---
+## 02-grafico.R
+
+```{r echo = TRUE}
+## metadados
+meta
+## convertendo coluna com data p/ classe Date
+class(df$date)
+df$date <- as.Date(df$date)
+class(df$date)
+```
+
+---
+## criando um gráfico com[ggplot2](https://ggplot2.tidyverse.org)
+
+```{r}
+p <- ggplot(df, aes(x = date, y = confirmed_per_100k_inhabitants)) +
+  geom_line(color = "red",
+            alpha = .5) +
+  geom_point(color = "red") +
+  scale_x_date(date_labels = "%d/%b") +
+  labs(x = "Data",
+       y = "Casos (por 100 mil habitantes)",
+       caption = paste0("Fonte: ", meta$fonte),
+       title = "Casos de COVID-19 no Rio de Janeiro-RJ") +
+  theme_minimal()
+```
+
+
+```{r, echo = TRUE, eval = FALSE}
+# 3. Fazendo um gráfico simples ####
+p <- ggplot(df, aes(x = date, y = confirmed_per_100k_inhabitants)) +
+  geom_line(color = "red",
+            alpha = .5) +
+  geom_point(color = "red") +
+  scale_x_date(date_labels = "%d/%b") +
+  labs(x = "Data",
+       y = "Casos (por 100 mil habitantes)",
+       caption = paste0("Fonte: ", meta$fonte),
+       title = "Casos de COVID-19 no Rio de Janeiro-RJ") +
+  theme_minimal()
+```
+
+---
+## nosso gráfico
+
+```{r, echo = TRUE, fig.align="center", fig.width = 6, fig.height  = 6}
+p 
+```
+
+
+---
+## exportando o gráfico
+
+```{r eval = FALSE, echo = TRUE}
+png("figs/02-rj_dados_brutos.png", res = 300,
+    width = 1400, height = 1200)
+p
+dev.off()
+
+```
+
+```
+    .
+    ...
+    ├── figs/                 
+    |     └── 02-rj_dados_brutos.png
+    ...
+```
+
+---
+class: center, middle
+# .purple[um alerta sobre os dados brutos de COVID-19]
+
+---
+## ressalvas em relação aos dados brutos
+
+1. __subnotificação__
+--
+
+
+2. __atraso__ na entrada dos dados no sistema - tanto para casos como óbitos
+--
+
+
+---
+## como vemos o atraso
+
+```{r, out.width=500, fig.align="center"}
+knitr::include_graphics("https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/fig/obitos_tempo_mai14.gif")
+```
+
+---
+## como corrigir o atraso com [nowcasting](https://github.com/covid19br/nowcasting)
+
+```{r}
+knitr::include_graphics("https://raw.githubusercontent.com/liibre/R-git/master/figs/03-rj_nowcasting.png")
+```
+
+
+---
+## um relatório simples com Rmarkdown
+
+- [Rmarkdwn](https://rmarkdown.rstudio.com) :)
+--
+
+
+- embebe diretivas de formato em um documento de texto
+--
+
+
+- sucessor de $\LaTeX$ e Markdown
+--
+
+
+- um tutorial [aqui](https://rpubs.com/andreasancheztapia/574403)
+--
+
+
+---
+## a gente está acostumada escrever e formatar
+
++ editores de texto __WYSIWYG - What you see is what you get__
+--
+
+
++ qualquer formatação mais "profissional" fica a cargo de desenhadores, diagramadores...
+--
+
+
++ a dificuldade é lidar com __paginação__, __tamanho/posicionamento__ de figuras, __fórmulas__ e com o __fluxo do texto__
+
+
+---
+## marcações de Rmarkdown
+
+.pull-left[
+`*italico*`
+
+`**negrito**`
+
+` `codigo` `
+]
+
+.pull-right[
+*italico*
+
+**negrito**
+
+`codigo`]
+
+
+---
+## um exemplo com nosso trabalho
+
+```{r}
+knitr::include_graphics("figs/rmarkdown_exemplo.png")
+```
+
+---
+## um exemplo com nosso trabalho
+
+```{r}
+knitr::include_graphics("figs/rmarkdown_exemplo2.png")
+```
+
 
 ---
 
