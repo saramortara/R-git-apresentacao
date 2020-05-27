@@ -1,143 +1,232 @@
 ---
-title: 'Trabalhos reprodutíveis com R e git: um exemplo usando o pacote coronabr'
+title: "Trabalhos reprodutíveis com R e git: um exemplo usando o pacote coronabr"
 author: "Sara Mortara"
 date: "27 maio 2020"
 output:
- beamer_presentation:
-    latex_engine: xelatex 
-    incremental: true
-    template:
-  
-header-includes:
-  - \usepackage{longtable,booktabs}
-  - \usepackage{graphicx}
-  - \usepackage{float}
-  - \usepackage{xcolor}
-  - \usepackage{subfig}
-  - \usepackage{fontspec}
-  - \usefonttheme{professionalfonts} 
-  - \usefonttheme{serif} 
-  - \setmainfont{Roboto Condensed}
-  - \definecolor{liibre}{HTML}{A70000}
-  - \definecolor{notblack}{HTML}{181818} 
-  - \definecolor{roxo}{HTML}{562457}
-  - \definecolor{rladies}{HTML}{88398a}
-  - \setbeamercolor{title}{fg = roxo}
-  - \setbeamercolor{frametitle}{fg = roxo}
-  - \setbeamercolor{structure}{fg = notblack}
-  - \renewcommand\alert[1]{\textcolor{rladies}{#1}}
-  - \newcommand\liibre{\textbf{\color{liibre}{¡liibre!}}}
-  - \setbeamertemplate{navigation symbols}{
-    {  \insertslidenavigationsymbol 
-    \insertframenavigationsymbol   
-    \insertsubsectionnavigationsymbol  
-    \insertsectionnavigationsymbol
-    \insertdocnavigationsymbol  
-    \insertbackfindforwardnavigationsymbol 
-    \hspace{1em}  
-    \usebeamerfont{footline} 
-    \insertframenumber/\inserttotalframenumber }
-    \setcounter{page}{1} 
-    \pagenumbering{arabic} }
-
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE)
+library(xaringanthemer)
+
+style_duo_accent(
+  primary_color = "#562457",
+  colors = c(
+    red = "#A70000",
+    purple = "#88398a",
+    orange = "#ff8811",
+    green = "#136f63",
+    white = "#FFFFFF",
+    black = "#181818"
+  ),
+  text_bold_color = "#181818",
+  header_font_google = google_font("Roboto Condensed"),
+  text_font_google = google_font("Roboto Condensed", "300", "300i"),
+  code_font_google = google_font("Ubuntu Mono"), text_font_size = "30px"
+)
 ```
 
+background-image: url(https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/rainbow.png)
+background-position: top right
+background-size: 110px 120px
+layout: true
+
+---
+background-image: url(figs/modleR.png)
+background-position: 80% 55%
 
 ## sobre
 
 - bióloga, usuária de R desde 2009
 - trabalho com reprodutibilidade em Ecologia, modelagem estatística e estudos de biodiversidade
-- uma das desenvolvedoras do pacote \textbf{\href{https://model-r.github.io/modleR/}{modleR}}, liderado por \textbf{\color{liibre}{Andrea Sánchez-Tapia}}
-\begin{flushright}
-\includegraphics[scale = .25]{../figs/modleR.png}
-\end{flushright}
-\vspace{-1.25cm}
-- \href{https://liibre.github.io/coronabr/about.html}{\liibre} - pacote \textbf{coronabr}
-- \href{https://covid19br.github.io/}{\textbf{Observatório COVID-19 BR}}
-- \href{https://twitter.com/RLadiesRio}{\textbf{\color{rladies}{@RLadiesRio}}}
+- uma das desenvolvedoras do pacote [__.red[modler]__](https://model-r.github.io/modleR/]modleR), liderado por __Andrea Sánchez-Tapia__
 
+
+
+```{r, opt.width = .1, fig.align="right"}
+#knitr::include_graphics("figs/modleR.png")
+```
+
+- [**.red[liibre]**](https://liibre.github.io/coronabr/about.html)
+- [**Observatório COVID-19 BR**](https://covid19br.github.io/)
+- [**.purple[@RLadiesRio]**](https://twitter.com/RLadiesRio)
+
+
+---
+class:toc
 ## sobre hoje
 
-\Large
- {
-  \hypersetup{hidelinks}
-  \tableofcontents
-}
-## 
+1. __por que reprodutibilidade?__
 
-\section{1. por que reprodutibilidade?}
+2. __usando R de forma reprodutível__
 
-## 
+3. __perdendo o medo de git__
 
-\includegraphics[scale = .5]{../figs/phd031214s.png}
+4. __um exemplo com o pacote coronabr__
 
+---
+class: center, middle, toc
+# __por que reprodutibilidade?__
+
+---
 ## motivos para reprodutibilidade
 
-\Large
+- por você no futuro
 
-por você no futuro
+--
+- por colegas
 
-por colegas
+--
+- evidências de que seus resultados estão corretos
 
-evidências de que seus resultados estão corretos
+--
+- permitir que outres usem seus métodos e resultados
 
-permitir que outres usem seus métodos e resultados
- 
+---
+class: middle, center
+
+![](figs/phd_comics.png)
+
+---
+## passos para reprodutibilidade
+
++ priorizar ferramentas baseadas em _scripts_ como `R`
+--
+
++ usar sistemas de __controle de versões__ como `git`
+--
+
++ documentar bem todos os passos e decisões
+--
+
++ publicar os protocolos e o código
+--
+
++ fomentar a revisão de metodologia e do código entre pares
+
+
+---
+background-image: url(figs/r_data_science.jpg)
+background-size: 150px 180px
+background-position: 85% 80%
 
 ## por que R?
 
-- muito comum na Biologia e em diversas áreas
-- acessível (em comparação a outras linguagens de programação)
-- free & open-source
 - script é essencial para reprodutibilidade, mas não a garante 
+--
 
+- __código aberto__, __livre__ & __sem custo__
+--
+
+- acessível (em comparação a outras linguagens de programação)
+--
+
+- muito comum na Biologia, Ciência de Dados e em diversas áreas
+--
+
+---
 ## por que git?
 
-- controle de versão
+- __controle de versão__
+--
+
 - permite acompanhar o histórico do desenvolvimento
+--
+
 - facilita o trabalho colaborativo
+--
+
 - facilita o compartilhamento de todas as etapas do trabalho
 
-## 
+---
+class: center, middle
+# __usando R de forma reprodutível__
 
-\section{2. usando R de forma reprodutível}
+---
+## estrutura de pastas
+
+__nomes__ e __caminhos__ são essenciais para o trabalho reprodutível!
+
+
+```
+    .
+    ├── codigo/               # Scripts em R
+    ├── dados/                # Dados brutos
+    ├── output/               # Outputs gerados a partir dos códigos
+    ├── figs/                 # Figuras geradas a partir dos códigos
+    ├── docs/                 # Relatórios reprodutíveis produzidos a partir dos outputs
+    ├── *.Rproj               # Projeto de RStudio
+    ├── .gitignore            # Lista dos arquivos e/ou pastas que não serão controlados
+    └── README.md             # Documentação -> Leia e escreva sempre que possível ;)
+```
+
+
+---
+background-image: url(figs/jenny_bryan.jpeg)
+background-size: 220px 240px
+background-position: 85% 50%
 
 ## usando projetos de RStudio
-\framesubtitle{esqueça `set.wd()`}
+esqueça `set.wd()` e conheça [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
 
-## 
+![](figs/jenny_bryan_wf.png)
 
-\section{3. perdendo o medo de git}
+---
+# .Rproj define o wd
 
-## git
+![](figs/rstudio_proj.png)
 
-##
 
-\section{4. um exemplo com o pacote coronabr}
+---
+class: center, middle
+# __perdendo o medo de git__
 
-## o pacote \href{https://liibre.github.io/coronabr/}{\textbf{coronabr}}
 
-\center
-\includegraphics[width = 9cm]{../figs/coronabr.png}
+
+---
+class: center, middle
+# __um exemplo com o pacote coronabr__
+
+---
+layout:false
+
+## o pacote [.red[coronabr]](https://liibre.github.io/coronabr/) 
+
+```{r}
+knitr::include_graphics("figs/coronabr.png")
+```
+
+---
 
 ## responsabilidade com dados
 
 - dados deveriam ser abertos e acessíveis
+  
+  [Trânsparência COVID-19 OPEN KNOWLEDGE BRASIL](https://transparenciacovid19.ok.org.br)
 - nem toda análise que **pode** ser feita, **deve** ser feita 
 - cada dado diz respeito a uma pessoa
 - para COVID-19 e SRAG: **subnotificação** & **atraso**
+- inconsistência com dados reportados em diferentes escalas: município, estado, país (no [Rio de Janeiro](https://g1.globo.com/rj/rio-de-janeiro/noticia/2020/05/26/prefeitura-muda-metodo-e-rio-registra-menos-1177-obitos-por-covid-19.ghtml))
 
+---
 ## dados brutos
 
+
+---
 ## dados com correção pelo atraso de notificação
 
-## obrigada
+---
 
-\center
-\includegraphics[scale = .1]{../figs/rainbow.png}
+background-image: url(https://raw.githubusercontent.com/rladies/starter-kit/master/stickers/rainbow.png)
+background-position: 80% 80%
+background-size: 220px 240px
 
-
+class: center, middle
+# __.purple[obrigada!]__
