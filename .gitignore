@@ -22,7 +22,6 @@
 
 # oututs do Rmd
 *.html
-*.pdf
 *.tex
 *.css
 
